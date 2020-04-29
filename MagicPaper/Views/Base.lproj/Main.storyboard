@@ -26,31 +26,57 @@
             </objects>
             <point key="canvasLocation" x="-1397" y="-445"/>
         </scene>
+        <!--BookDescription-->
+        <scene sceneID="hag-tj-BOS">
+            <objects>
+                <viewController storyboardIdentifier="BookDescription" title="BookDescription" id="o7L-ra-sNf" customClass="BookDescriptionViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gCn-Ek-9pc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ims-SM-vpc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hyy-mM-OXp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W35-6W-zkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="-814"/>
+        </scene>
         <!--Store-->
         <scene sceneID="yt7-VX-Jwf">
             <objects>
-                <tableViewController id="EVz-x0-TPK" sceneMemberID="viewController">
+                <tableViewController id="EVz-x0-TPK" customClass="StoreTableViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ydC-KP-ap4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Loj-C9-G5g" style="IBUITableViewCellStyleDefault" id="cvh-fy-GUx">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StoreItemCell" textLabel="Loj-C9-G5g" detailTextLabel="l5p-UX-34e" style="IBUITableViewCellStyleSubtitle" id="cvh-fy-GUx">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvh-fy-GUx" id="gaw-3r-QIb">
-                                    <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Loj-C9-G5g">
-                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <rect key="frame" x="16" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l5p-UX-34e">
+                                            <rect key="frame" x="16" y="31.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="o7L-ra-sNf" kind="show" identifier="BookDescriptoinSegue" trigger="accessoryAction" id="ZQJ-nN-BmL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAE-Rf-apk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.80000000000001" y="-811.84407796101959"/>
+            <point key="canvasLocation" x="476" y="-813"/>
         </scene>
         <!--My files-->
         <scene sceneID="Rqy-ro-cxZ">
@@ -73,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hXb-zt-Scc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFilesItemCell" id="hXb-zt-Scc">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXb-zt-Scc" id="clU-m1-x0m">
@@ -97,7 +123,7 @@
         <scene sceneID="9Dp-aT-B6e">
             <objects>
                 <navigationController id="ajK-OV-ORd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My files" id="POT-LI-W88"/>
+                    <tabBarItem key="tabBarItem" title="My files" image="folder" id="POT-LI-W88"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h1y-5k-ZQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -131,7 +157,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="y6T-HK-WZC"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="y6T-HK-WZC"/>
                     <navigationItem key="navigationItem" id="vc3-VB-W7n"/>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
@@ -145,7 +171,7 @@
         <scene sceneID="hFz-TQ-C8N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8H-6U-NOV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" id="uw0-ba-CnQ"/>
+                    <tabBarItem key="tabBarItem" title="Store" image="search" id="uw0-ba-CnQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ep4-R5-HIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -158,7 +184,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMU-CQ-M3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482.39999999999998" y="-811.84407796101959"/>
+            <point key="canvasLocation" x="-476" y="-812"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="32" height="32"/>
+        <image name="folder" width="32" height="32"/>
+        <image name="search" width="32" height="32"/>
+    </resources>
 </document>

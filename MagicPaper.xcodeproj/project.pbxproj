@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC4D85382455E77600CA50AF /* storeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D85372455E77600CA50AF /* storeTableViewController.swift */; };
+		FC4D853E2458431700CA50AF /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */; };
 		FC96A0BC23FD823100062E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BB23FD823100062E82 /* AppDelegate.swift */; };
 		FC96A0BE23FD823200062E82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0BD23FD823200062E82 /* art.scnassets */; };
 		FC96A0C023FD823200062E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BF23FD823200062E82 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC4D85372455E77600CA50AF /* storeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeTableViewController.swift; sourceTree = "<group>"; };
+		FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
 		FC96A0B823FD823100062E82 /* MagicPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC96A0BB23FD823100062E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC96A0BD23FD823200062E82 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -39,6 +43,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC4D85392455ED9600CA50AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC4D85372455E77600CA50AF /* storeTableViewController.swift */,
+				FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */,
+				FC96A0BF23FD823200062E82 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FC4D853A2455EDC100CA50AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC96A0C623FD823600062E82 /* LaunchScreen.storyboard */,
+				FC96A0C423FD823600062E82 /* Assets.xcassets */,
+				FC96A0BD23FD823200062E82 /* art.scnassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC4D853B2455EDDF00CA50AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC96A0C123FD823200062E82 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC4D853C2455EE0600CA50AF /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				FC96A0CF23FD902200062E82 /* harrypotter.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		FC96A0AF23FD823100062E82 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +98,11 @@
 		FC96A0BA23FD823100062E82 /* MagicPaper */ = {
 			isa = PBXGroup;
 			children = (
-				FC96A0CF23FD902200062E82 /* harrypotter.mp4 */,
 				FC96A0BB23FD823100062E82 /* AppDelegate.swift */,
-				FC96A0BD23FD823200062E82 /* art.scnassets */,
-				FC96A0BF23FD823200062E82 /* ViewController.swift */,
-				FC96A0C123FD823200062E82 /* Main.storyboard */,
-				FC96A0C423FD823600062E82 /* Assets.xcassets */,
-				FC96A0C623FD823600062E82 /* LaunchScreen.storyboard */,
+				FC4D853C2455EE0600CA50AF /* Videos */,
+				FC4D85392455ED9600CA50AF /* Controllers */,
+				FC4D853B2455EDDF00CA50AF /* Views */,
+				FC4D853A2455EDC100CA50AF /* Supporting Files */,
 				FC96A0C923FD823600062E82 /* Info.plist */,
 			);
 			path = MagicPaper;
@@ -143,7 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4D853E2458431700CA50AF /* BookDescriptionViewController.swift in Sources */,
 				FC96A0C023FD823200062E82 /* ViewController.swift in Sources */,
+				FC4D85382455E77600CA50AF /* storeTableViewController.swift in Sources */,
 				FC96A0BC23FD823100062E82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
