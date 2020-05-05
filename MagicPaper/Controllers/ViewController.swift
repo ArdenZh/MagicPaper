@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import RealmSwift
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -56,7 +57,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if let imageAnchor = anchor as? ARImageAnchor {
             
-            let videoNode = SKVideoNode(fileNamed: "harrypotter.mp4")
+            let videoNode = SKVideoNode(fileNamed: "familia.mp4")
             
             videoNode.play()
             

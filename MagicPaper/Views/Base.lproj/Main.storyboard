@@ -45,14 +45,22 @@
         <!--Store-->
         <scene sceneID="yt7-VX-Jwf">
             <objects>
-                <tableViewController id="EVz-x0-TPK" customClass="StoreTableViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EVz-x0-TPK" customClass="StoreTableViewController" customModule="MagicPaper" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ydC-KP-ap4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Y0R-A3-OQv">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="EVz-x0-TPK" id="pBo-uG-PY3"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StoreItemCell" textLabel="Loj-C9-G5g" detailTextLabel="l5p-UX-34e" style="IBUITableViewCellStyleSubtitle" id="cvh-fy-GUx">
-                                <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvh-fy-GUx" id="gaw-3r-QIb">
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="55.5"/>
@@ -123,7 +131,7 @@
         <scene sceneID="9Dp-aT-B6e">
             <objects>
                 <navigationController id="ajK-OV-ORd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My files" image="folder" id="POT-LI-W88"/>
+                    <tabBarItem key="tabBarItem" title="My files" image="folder" catalog="system" selectedImage="folder" id="POT-LI-W88"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h1y-5k-ZQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -157,7 +165,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="y6T-HK-WZC"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" selectedImage="camera" id="y6T-HK-WZC"/>
                     <navigationItem key="navigationItem" id="vc3-VB-W7n"/>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
@@ -167,11 +175,11 @@
             </objects>
             <point key="canvasLocation" x="-2194" y="-182"/>
         </scene>
-        <!--Store-->
+        <!--Search-->
         <scene sceneID="hFz-TQ-C8N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8H-6U-NOV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" image="search" id="uw0-ba-CnQ"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="uw0-ba-CnQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ep4-R5-HIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -179,7 +187,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="EVz-x0-TPK" kind="relationship" relationship="rootViewController" id="1di-sT-Ers"/>
+                        <segue destination="EVz-x0-TPK" kind="relationship" relationship="rootViewController" id="Op5-MU-gYA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMU-CQ-M3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,8 +196,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="32" height="32"/>
-        <image name="folder" width="32" height="32"/>
-        <image name="search" width="32" height="32"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>
