@@ -3,15 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		400E4EAD2D46AA871384717B /* Pods_MagicPaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8825511304EAFC8AE6E0FD3 /* Pods_MagicPaper.framework */; };
 		FC4D85382455E77600CA50AF /* storeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D85372455E77600CA50AF /* storeTableViewController.swift */; };
 		FC4D853E2458431700CA50AF /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */; };
 		FC4EEAC824602D1E00A641DA /* StoreBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4EEAC724602D1E00A641DA /* StoreBook.swift */; };
-		FC4EEACB246169CA00A641DA /* Pods_MagicPaper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EFD18D410F3629628F07319 /* Pods_MagicPaper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC4EEACB246169CA00A641DA /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC96A0BC23FD823100062E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BB23FD823100062E82 /* AppDelegate.swift */; };
 		FC96A0BE23FD823200062E82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0BD23FD823200062E82 /* art.scnassets */; };
 		FC96A0C023FD823200062E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BF23FD823200062E82 /* ViewController.swift */; };
@@ -29,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FC4EEACB246169CA00A641DA /* Pods_MagicPaper.framework in Embed Frameworks */,
+				FC4EEACB246169CA00A641DA /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,10 +36,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EFD18D410F3629628F07319 /* Pods_MagicPaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicPaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FB524232E919099D694671E /* Pods-MagicPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicPaper.release.xcconfig"; path = "Target Support Files/Pods-MagicPaper/Pods-MagicPaper.release.xcconfig"; sourceTree = "<group>"; };
-		703CBE10E086EF40E0CFBBDC /* Pods-MagicPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicPaper.debug.xcconfig"; path = "Target Support Files/Pods-MagicPaper/Pods-MagicPaper.debug.xcconfig"; sourceTree = "<group>"; };
-		F8825511304EAFC8AE6E0FD3 /* Pods_MagicPaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicPaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4D85372455E77600CA50AF /* storeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeTableViewController.swift; sourceTree = "<group>"; };
 		FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
 		FC4EEAC724602D1E00A641DA /* StoreBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBook.swift; sourceTree = "<group>"; };
@@ -61,26 +56,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				400E4EAD2D46AA871384717B /* Pods_MagicPaper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9536CD70F316D2A65415F3B7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F8825511304EAFC8AE6E0FD3 /* Pods_MagicPaper.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F5E0824C35739A6BF46C89FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				703CBE10E086EF40E0CFBBDC /* Pods-MagicPaper.debug.xcconfig */,
-				4FB524232E919099D694671E /* Pods-MagicPaper.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -130,13 +114,20 @@
 			path = "Data Model";
 			sourceTree = "<group>";
 		};
+		FC4EEAD72461753C00A641DA /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		FC96A0AF23FD823100062E82 = {
 			isa = PBXGroup;
 			children = (
 				FC96A0BA23FD823100062E82 /* MagicPaper */,
 				FC96A0B923FD823100062E82 /* Products */,
 				F5E0824C35739A6BF46C89FC /* Pods */,
-				9536CD70F316D2A65415F3B7 /* Frameworks */,
+				FC4EEAD72461753C00A641DA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,12 +160,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC96A0CC23FD823600062E82 /* Build configuration list for PBXNativeTarget "MagicPaper" */;
 			buildPhases = (
-				3CF5FF4A0490E355932D12B4 /* [CP] Check Pods Manifest.lock */,
 				FC96A0B423FD823100062E82 /* Sources */,
 				FC96A0B523FD823100062E82 /* Frameworks */,
 				FC96A0B623FD823100062E82 /* Resources */,
 				FC4EEACC246169CA00A641DA /* Embed Frameworks */,
-				4E10FA98BC71CD17AFBBACC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,48 +222,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3CF5FF4A0490E355932D12B4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MagicPaper-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4E10FA98BC71CD17AFBBACC2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MagicPaper/Pods-MagicPaper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MagicPaper/Pods-MagicPaper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MagicPaper/Pods-MagicPaper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC96A0B423FD823100062E82 /* Sources */ = {
@@ -427,7 +374,6 @@
 		};
 		FC96A0CD23FD823600062E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 703CBE10E086EF40E0CFBBDC /* Pods-MagicPaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,7 +392,6 @@
 		};
 		FC96A0CE23FD823600062E82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FB524232E919099D694671E /* Pods-MagicPaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
