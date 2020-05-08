@@ -10,7 +10,9 @@
 		FC4D85382455E77600CA50AF /* storeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D85372455E77600CA50AF /* storeTableViewController.swift */; };
 		FC4D853E2458431700CA50AF /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */; };
 		FC4EEAC824602D1E00A641DA /* StoreBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4EEAC724602D1E00A641DA /* StoreBook.swift */; };
-		FC4EEACB246169CA00A641DA /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC4EEACB246169CA00A641DA /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC4EEADA24655D8300A641DA /* familia_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FC4EEAD824655D7F00A641DA /* familia_1.mp4 */; };
+		FC4EEADB24655D8300A641DA /* familia_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FC4EEAD924655D8200A641DA /* familia_2.mp4 */; };
 		FC96A0BC23FD823100062E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BB23FD823100062E82 /* AppDelegate.swift */; };
 		FC96A0BE23FD823200062E82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0BD23FD823200062E82 /* art.scnassets */; };
 		FC96A0C023FD823200062E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BF23FD823200062E82 /* ViewController.swift */; };
@@ -28,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FC4EEACB246169CA00A641DA /* BuildFile in Embed Frameworks */,
+				FC4EEACB246169CA00A641DA /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +41,8 @@
 		FC4D85372455E77600CA50AF /* storeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeTableViewController.swift; sourceTree = "<group>"; };
 		FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
 		FC4EEAC724602D1E00A641DA /* StoreBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBook.swift; sourceTree = "<group>"; };
+		FC4EEAD824655D7F00A641DA /* familia_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = familia_1.mp4; sourceTree = "<group>"; };
+		FC4EEAD924655D8200A641DA /* familia_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = familia_2.mp4; sourceTree = "<group>"; };
 		FC96A0B823FD823100062E82 /* MagicPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC96A0BB23FD823100062E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC96A0BD23FD823200062E82 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		FC4D853C2455EE0600CA50AF /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				FC4EEAD824655D7F00A641DA /* familia_1.mp4 */,
+				FC4EEAD924655D8200A641DA /* familia_2.mp4 */,
 				FCD2A24D245DD1D40069B62E /* familia.mp4 */,
 				FC96A0CF23FD902200062E82 /* harrypotter.mp4 */,
 			);
@@ -212,9 +218,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4EEADB24655D8300A641DA /* familia_2.mp4 in Resources */,
 				FC96A0BE23FD823200062E82 /* art.scnassets in Resources */,
 				FC96A0C823FD823600062E82 /* LaunchScreen.storyboard in Resources */,
 				FC96A0D023FD902200062E82 /* harrypotter.mp4 in Resources */,
+				FC4EEADA24655D8300A641DA /* familia_1.mp4 in Resources */,
 				FCD2A24E245DD1D40069B62E /* familia.mp4 in Resources */,
 				FC96A0C523FD823600062E82 /* Assets.xcassets in Resources */,
 				FC96A0C323FD823200062E82 /* Main.storyboard in Resources */,

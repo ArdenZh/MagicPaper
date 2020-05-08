@@ -15,6 +15,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    private var isTouch: Bool = false
+    
+    private var videoNode = SKVideoNode()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,30 +61,57 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if let imageAnchor = anchor as? ARImageAnchor {
             
-            let videoNode = SKVideoNode(fileNamed: "familia.mp4")
+            if var videoName = imageAnchor.referenceImage.name{
+                
+                videoName += ".mp4"
             
-            videoNode.play()
+                videoNode = SKVideoNode(fileNamed: videoName)
+                
+                videoNode.pause()
+                isTouch = false
+                
+                let videoScene = SKScene(size: CGSize(width: 480, height: 360))
+                
+                videoNode.position = CGPoint(x: videoScene.size.width / 2, y: videoScene.size.height / 2)
+                
+                videoNode.yScale = -1.0
+                
+                videoScene.addChild(videoNode)
+                
+                let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+                plane.firstMaterial?.diffuse.contents = videoScene
+                
+                let planeNode = SCNNode(geometry: plane)
+                
+                planeNode.eulerAngles.x = -.pi/2
+                
+                node.addChildNode(planeNode)
             
-            let videoScene = SKScene(size: CGSize(width: 480, height: 360))
-            
-            videoNode.position = CGPoint(x: videoScene.size.width / 2, y: videoScene.size.height / 2)
-            
-            videoNode.yScale = -1.0
-            
-            videoScene.addChild(videoNode)
-            
-            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-            plane.firstMaterial?.diffuse.contents = videoScene
-            
-            let planeNode = SCNNode(geometry: plane)
-            
-            planeNode.eulerAngles.x = -.pi/2
-            
-            node.addChildNode(planeNode)
+            }
             
         }
         
         return node
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        if let imageAnchor = anchor as? ARImageAnchor, imageAnchor.isTracked == false {
+            sceneView.session.remove(anchor: anchor)
+            videoNode.pause()
+            isTouch = false
+        }
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if isTouch == false{
+            videoNode.play()
+            isTouch = true
+        }
+        else {
+            videoNode.pause()
+            isTouch = false
+        }
     }
     
 }
