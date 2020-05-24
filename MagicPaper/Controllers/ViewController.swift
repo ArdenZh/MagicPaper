@@ -19,11 +19,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     private var videoNode = SKVideoNode()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
         sceneView.delegate = self
+        
+        
         
         // Show statistics such as fps and timing information
 //        sceneView.showsStatistics = true
@@ -36,11 +39,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARImageTrackingConfiguration()
         
-        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "NewsPaperImages", bundle: Bundle.main){
-            configuration.trackingImages = trackedImages
-            
-            configuration.maximumNumberOfTrackedImages = 1
-        }
+        configuration.trackingImages = anARReferenceImages.anARRefImg
+        
+        configuration.maximumNumberOfTrackedImages = 1
+        
+         print("New group\(anARReferenceImages.anARRefImg)")
+        
+//        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "NewsPaperImages", bundle: Bundle.main){
+//            configuration.trackingImages = trackedImages
+//
+//            configuration.maximumNumberOfTrackedImages = 1
+//
+//            print("Новый бандл: \(trackedImages)")
+//        }
+//
+        
         
         // Run the view's session
         sceneView.session.run(configuration)
@@ -60,6 +73,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode()
         
         if let imageAnchor = anchor as? ARImageAnchor {
+            
+            print("Нашел изображение")
             
             if var videoName = imageAnchor.referenceImage.name{
                 
