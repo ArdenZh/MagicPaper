@@ -8,37 +8,33 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class StoreTableViewController: UITableViewController, UISearchBarDelegate {
-//
-//    let realm = try! Realm()
-//
-    var storeBookArray = [StoreBook]()
 
-    let itemArray : [String : String] = ["Физика 8 класс" : "Автор: Демидович. Издательство мектеп 2018г.", "Химия 9 класс" : "Автор: Борисенко. Издательство Светоч, 2017г.", "Биология 8 класс" : "Автор: Солнышкин. Издательство мектеп, 2018г."]
-    
+    var storeBookArray = [Book]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
          
-        let storeBook1 = StoreBook()
+        let storeBook1 = Book()
         storeBook1.bookTitle = "Физика 8 класс"
         storeBook1.bookDescription = "Автор: Демидович. Издательство мектеп 2018г."
         storeBookArray.append(storeBook1)
         
-        let storeBook2 = StoreBook()
+        let storeBook2 = Book()
         storeBook2.bookTitle = "Химия 9 класс"
         storeBook2.bookDescription = "Автор: Борисенко. Издательство Светоч, 2017г."
         storeBookArray.append(storeBook2)
         
-        let storeBook3 = StoreBook()
+        let storeBook3 = Book()
         storeBook3.bookTitle = "Биология 8 класс"
         storeBook3.bookDescription = "Автор: Солнышкин. Издательство мектеп, 2018г."
         storeBookArray.append(storeBook3)
-        
-        
+
     }
     
-    //MARK - TableView Datasourse methods
+    // MARK: - TableView Datasourse methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storeBookArray.count
@@ -50,9 +46,6 @@ class StoreTableViewController: UITableViewController, UISearchBarDelegate {
         
         cell.textLabel?.text = storeBookArray[indexPath.row].bookTitle
         cell.detailTextLabel?.text = storeBookArray[indexPath.row].bookDescription
-        
-//        cell.textLabel?.text = itemArray.keys.sorted()[indexPath.row]
-//        cell.detailTextLabel?.text = itemArray.values.sorted()[indexPath.row]
 
         return cell
     }

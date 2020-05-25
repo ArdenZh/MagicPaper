@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import RealmSwift
 
 
 class ViewController: UIViewController, ARSCNViewDelegate {
@@ -43,17 +44,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         configuration.maximumNumberOfTrackedImages = 1
         
-         print("New group\(anARReferenceImages.anARRefImg)")
-        
-//        if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "NewsPaperImages", bundle: Bundle.main){
-//            configuration.trackingImages = trackedImages
-//
-//            configuration.maximumNumberOfTrackedImages = 1
-//
-//            print("Новый бандл: \(trackedImages)")
-//        }
-//
-        
+        print("New group\(anARReferenceImages.anARRefImg)")
         
         // Run the view's session
         sceneView.session.run(configuration)
@@ -78,9 +69,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             if var videoName = imageAnchor.referenceImage.name{
                 
-                videoName += ".mp4"
-            
-                videoNode = SKVideoNode(fileNamed: videoName)
+                print(videoName)
+                
+                if videoName.starts(with: "user"){
+                    
+                    let realm = try! Realm()
+
+                    
+                    let predicate = NSPredicate(format: "videoPath CONTAINS '\(videoName)'")
+                    let videoObject = realm.objects(Book.self).filter(predicate)
+                    print("Количество найденных объектов в Realm: \(videoObject.count)")
+                    let videoURL = URL(string: videoObject[0].videoPath)!
+                    
+                    
+                    print("videoURL: \(videoURL)")
+                    
+                    videoNode = SKVideoNode(url: videoURL)
+                    
+                }else{
+                    videoName += ".mp4"
+                    videoNode = SKVideoNode(fileNamed: videoName)
+                }
+                
                 
                 videoNode.pause()
                 isTouch = false

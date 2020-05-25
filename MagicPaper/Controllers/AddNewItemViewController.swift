@@ -8,8 +8,11 @@
 
 import UIKit
 import ARKit
+import RealmSwift
 
 class AddNewItemViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     var imagePicker: ImagePicker!
     @IBOutlet weak var imageView: UIImageView!
@@ -20,6 +23,8 @@ class AddNewItemViewController: UIViewController {
     @IBOutlet weak var videoPickerButton: UIButton!
     
     @IBOutlet weak var newPapersName: UITextField!
+    
+    @IBOutlet weak var newPapersDescription: UITextField!
     
     @IBOutlet weak var newPapersWidth: UITextField!
     
@@ -48,6 +53,8 @@ class AddNewItemViewController: UIViewController {
         
         videoView.layer.borderColor = UIColor.systemBlue.cgColor
         videoView.layer.borderWidth = 1
+        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
     //hide keyboard by clicking on any view area (suitable only if there is no scroll!!)
@@ -70,7 +77,7 @@ class AddNewItemViewController: UIViewController {
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        print(paths[0])
+//        print(paths[0])
         return paths[0]
     }
     
@@ -80,41 +87,67 @@ class AddNewItemViewController: UIViewController {
             didImageSelect == true /*&&
             didVideoSelect == true*/ {
             
+            let newBook = Book()
+                
             let image = imageView.image!
             
+                let videoURL = getDocumentsDirectory().appendingPathComponent("addedVideo.mp4")
+                
+                
+                let userNewPapersName = "user" + newPapersName.text!
+            
+                let newVideoURL = videoURL.deletingLastPathComponent().appendingPathComponent(userNewPapersName).appendingPathExtension("mp4")
+                do{
+                    try FileManager.default.moveItem(at: videoURL, to: newVideoURL)
+                }catch{
+                    print("ERROR WITH VIDEO COPYING \(error)")
+                } 
+                
+                print("Video URL: \(newVideoURL)")
+                
+                let stringNewVideoURL = newVideoURL.absoluteString
+                
+                print(stringNewVideoURL)
+            
             if let data = image.jpegData(compressionQuality: 1) {
-                let filename = getDocumentsDirectory().appendingPathComponent(newPapersName.text!).appendingPathComponent(".jpg")
-                try? data.write(to: filename)
-                print(data)
+
+                let whritePath = getDocumentsDirectory().appendingPathComponent(userNewPapersName).appendingPathExtension("jpg")
+                
+                try? data.write(to: whritePath)
+                print("data: \(data)")
+                
+                let stringImagePath = whritePath.absoluteString
+                print("stringImagePath: \(stringImagePath)")
+                
+            
+                
+                newBook.bookDescription = newPapersDescription.text!
+                newBook.bookTitle = newPapersName.text!
+                newBook.imagePath = stringImagePath
+                newBook.videoPath = stringNewVideoURL
+                
+                print("newBook.videoPath: \(newBook.videoPath)")
             }
             
+                do{
+                    try realm.write{
+                        realm.add(newBook)
+                    }
+                }catch{
+                    print("Error writing primary data to Realm \(error)")
+                }
                 
                 let width = CGFloat(Float(newPapersWidth.text!)!)/100
                 
-                print("width in meters: \(width)")
             
                 
             if let cgImage = image.cgImage{
                 let newARImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: width)
-                newARImage.name = newPapersName.text
+                newARImage.name = userNewPapersName
                 anARReferenceImages.anARRefImg.insert(newARImage)
                 print(anARReferenceImages.anARRefImg)
             }
             
-                
-                
-                
-                
-//            if var resources = ARReferenceImage.referenceImages(inGroupNamed: "NewsPaperImages", bundle: Bundle.main){
-//                print(resources)
-//                if let cgImage = image.cgImage{
-//                    let newARImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: width)
-//                    newARImage.name = newPapersName.text
-//                    resources.insert(newARImage)
-//                    print(resources)
-//                }
-//
-//            }
         }
     }
     
