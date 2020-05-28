@@ -14,8 +14,10 @@ class Book: Object {
     @objc dynamic var bookTitle: String = ""
     @objc dynamic var bookDescription: String? = ""
     
-    @objc dynamic var imagePath: String = ""
-    @objc dynamic var videoPath: String = ""
+    @objc dynamic var imageName: String = ""
+    @objc dynamic var videoName: String = ""
+    
+    @objc dynamic var imageWidth: Float = 0
     
 //    let referenceImagesAndVideos = List<ReferenceImageAndVideo>()
     

@@ -29,7 +29,7 @@ class AddNewItemViewController: UIViewController {
     @IBOutlet weak var newPapersWidth: UITextField!
     
     @IBOutlet weak var createButton: UIButton!
-    
+
     var didImageSelect: Bool = false
     var didVideoSelect: Bool = false
 
@@ -42,7 +42,7 @@ class AddNewItemViewController: UIViewController {
         self.videoView.player?.isMuted = true
         self.videoView.repeat = .loop
         
-        newPapersWidth.keyboardType = .numbersAndPunctuation
+        newPapersWidth.keyboardType = .numberPad
         
         imagePickerButton.layer.cornerRadius = 5
         videoPickerButton.layer.cornerRadius = 5
@@ -57,12 +57,18 @@ class AddNewItemViewController: UIViewController {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        createButton.isUserInteractionEnabled = false
+        createButton.backgroundColor = .systemGray
+    }
+    
     //hide keyboard by clicking on any view area (suitable only if there is no scroll!!)
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first != nil{
             view.endEditing(true)
         }
         super.touchesBegan(touches, with: event)
+        didAllFieldsFill()
     }
 
     @IBAction func imagePickerButtonTouched(_ sender: UIButton) {
@@ -77,77 +83,121 @@ class AddNewItemViewController: UIViewController {
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        print(paths[0])
         return paths[0]
     }
     
     @IBAction func createNewPaper(_ sender: UIButton) {
-        if newPapersName != nil &&
-            newPapersWidth != nil &&
-            didImageSelect == true /*&&
-            didVideoSelect == true*/ {
             
-            let newBook = Book()
-                
-            let image = imageView.image!
-            
-                let videoURL = getDocumentsDirectory().appendingPathComponent("addedVideo.mp4")
-                
-                
-                let userNewPapersName = "user" + newPapersName.text!
-            
-                let newVideoURL = videoURL.deletingLastPathComponent().appendingPathComponent(userNewPapersName).appendingPathExtension("mp4")
-                do{
-                    try FileManager.default.moveItem(at: videoURL, to: newVideoURL)
-                }catch{
-                    print("ERROR WITH VIDEO COPYING \(error)")
-                } 
-                
-                print("Video URL: \(newVideoURL)")
-                
-                let stringNewVideoURL = newVideoURL.absoluteString
-                
-                print(stringNewVideoURL)
-            
-            if let data = image.jpegData(compressionQuality: 1) {
+            saveMedia()
+            navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    func saveMedia() {
+        
+        let userNewPapersName = "user" + newPapersName.text!
+        
+        //save video to Documents folder and rename
+        let videoURL = getDocumentsDirectory().appendingPathComponent("addedVideo.mp4")
 
-                let whritePath = getDocumentsDirectory().appendingPathComponent(userNewPapersName).appendingPathExtension("jpg")
-                
-                try? data.write(to: whritePath)
-                print("data: \(data)")
-                
-                let stringImagePath = whritePath.absoluteString
-                print("stringImagePath: \(stringImagePath)")
-                
+        let newVideoURL = videoURL
+            .deletingLastPathComponent()
+            .appendingPathComponent(userNewPapersName)
+            .appendingPathExtension("mp4")
+        
+        do{
+            try FileManager.default.moveItem(at: videoURL, to: newVideoURL)
+        }catch{
+            print("Error with saving video to Documents folder \(error)")
+        }
+        
+        
+        //save photo to Documents folder and rename
+        let image = imageView.image!
+        let width = (Float(newPapersWidth.text!)!)/100.0
+        
+        if let data = image.jpegData(compressionQuality: 1) {
+
+            let whritePath = getDocumentsDirectory()
+                .appendingPathComponent(userNewPapersName)
+                .appendingPathExtension("jpg")
             
-                
-                newBook.bookDescription = newPapersDescription.text!
-                newBook.bookTitle = newPapersName.text!
-                newBook.imagePath = stringImagePath
-                newBook.videoPath = stringNewVideoURL
-                
-                print("newBook.videoPath: \(newBook.videoPath)")
+            do{
+                try data.write(to: whritePath)
+            }catch{
+                print("Error with saving photo to Documents folder \(error)")
             }
             
-                do{
-                    try realm.write{
-                        realm.add(newBook)
+            saveMediaToRealm(bookDescription: newPapersDescription.text!,
+                             bookTitle: newPapersName.text!,
+                             fullImagePath: whritePath,
+                             fullVideoPath: newVideoURL,
+                             imageWidth: width)
+        }
+        
+        //save image to AR Reference group
+        let anARWidth = CGFloat(width)
+        
+        if let cgImage = image.cgImage{
+            let newARImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: anARWidth)
+            newARImage.name = userNewPapersName
+            anARReferenceImages.anARRefImg.insert(newARImage)
+            print(anARReferenceImages.anARRefImg)
+        }
+    }
+    
+    
+    func saveMediaToRealm(bookDescription: String, bookTitle: String, fullImagePath: URL, fullVideoPath: URL, imageWidth: Float) {
+        
+        let newBook = Book()
+        
+        newBook.bookDescription = bookDescription
+        newBook.bookTitle = bookTitle
+        newBook.imageName = fullImagePath.lastPathComponent
+        newBook.videoName = fullVideoPath.lastPathComponent
+        newBook.imageWidth = imageWidth
+        
+        do{
+            try realm.write{
+                realm.add(newBook)
+            }
+        }catch{
+            print("Error writing primary data to Realm \(error)")
+        }
+        
+    }
+    
+    func didAllFieldsFill() {
+        if didImageSelect == true &&
+            didVideoSelect == true &&
+            newPapersName.text != "" &&
+            newPapersWidth.text != ""{
+            
+            if let newPapersWidthInt = Int(newPapersWidth.text!){
+            
+                if newPapersWidthInt == 0{
+                    let alert = UIAlertController(title: "Ширина изображения не может быть 0", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "ОК", style: .default) { (action) in
+                        
+                        self.newPapersWidth.layer.borderColor = UIColor.systemRed.cgColor
+                        self.newPapersWidth.text = ""
+                        
                     }
-                }catch{
-                    print("Error writing primary data to Realm \(error)")
+                    
+                    alert.addAction(action)
+                    present(alert, animated: true, completion: nil)
+                    
+                    createButton.isUserInteractionEnabled = false
+                    createButton.backgroundColor = .systemGray
+                }else{
+                    createButton.isUserInteractionEnabled = true
+                    createButton.backgroundColor = .systemGreen
                 }
-                
-                let width = CGFloat(Float(newPapersWidth.text!)!)/100
-                
-            
-                
-            if let cgImage = image.cgImage{
-                let newARImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: width)
-                newARImage.name = userNewPapersName
-                anARReferenceImages.anARRefImg.insert(newARImage)
-                print(anARReferenceImages.anARRefImg)
             }
-            
+        }else{
+            createButton.isUserInteractionEnabled = false
+            createButton.backgroundColor = .systemGray
         }
     }
     
@@ -161,7 +211,7 @@ extension AddNewItemViewController: ImagePickerDelegate {
         }
         self.imageView.image = image
         didImageSelect = true
-        
+        didAllFieldsFill()
     }
 }
 
@@ -176,6 +226,7 @@ extension AddNewItemViewController: VideoPickerDelegate {
         self.videoView.player?.play()
         
         didVideoSelect = true
+        didAllFieldsFill()
     }
 }
 

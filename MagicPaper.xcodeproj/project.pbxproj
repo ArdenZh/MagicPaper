@@ -28,6 +28,7 @@
 		FCC25477246C5EF800DD4B83 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC25476246C5EF800DD4B83 /* VideoView.swift */; };
 		FCC2547B246C637B00DD4B83 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2547A246C637B00DD4B83 /* AddNewItemViewController.swift */; };
 		FCD2A24E245DD1D40069B62E /* familia.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FCD2A24D245DD1D40069B62E /* familia.mp4 */; };
+		FCF182A1247FBF5000DBF969 /* StoreBooksInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF182A0247FBF5000DBF969 /* StoreBooksInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		FCC25476246C5EF800DD4B83 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		FCC2547A246C637B00DD4B83 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
 		FCD2A24D245DD1D40069B62E /* familia.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = familia.mp4; sourceTree = "<group>"; };
+		FCF182A0247FBF5000DBF969 /* StoreBooksInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBooksInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				FC4EEAC724602D1E00A641DA /* Book.swift */,
 				FC686011247BC41200715162 /* ReferenceImageAndVideo.swift */,
+				FCF182A0247FBF5000DBF969 /* StoreBooksInfo.swift */,
 				FC68600D247A7BEF00715162 /* ARReferenceImages.swift */,
 				FCC25472246C5E5C00DD4B83 /* ImagePicker.swift */,
 				FCC25474246C5EBE00DD4B83 /* VideoPicker.swift */,
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF182A1247FBF5000DBF969 /* StoreBooksInfo.swift in Sources */,
 				FC4EEAC824602D1E00A641DA /* Book.swift in Sources */,
 				FC686012247BC41200715162 /* ReferenceImageAndVideo.swift in Sources */,
 				FCC25475246C5EBE00DD4B83 /* VideoPicker.swift in Sources */,

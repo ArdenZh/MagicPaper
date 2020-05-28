@@ -24,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuT-dG-8Wa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1397" y="-445"/>
+            <point key="canvasLocation" x="-1383" y="-446"/>
         </scene>
         <!--BookDescription-->
         <scene sceneID="hag-tj-BOS">
@@ -33,14 +33,47 @@
                     <view key="view" contentMode="scaleToFill" id="gCn-Ek-9pc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9E-AF-VWU">
+                                <rect key="frame" x="235" y="56" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ibd-7t-Wbs">
+                                <rect key="frame" x="16" y="56" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCw-io-3GB">
+                                <rect key="frame" x="16" y="251" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Подзаголовок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-Gk-6gb">
+                                <rect key="frame" x="217" y="107" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ims-SM-vpc"/>
                     </view>
                     <navigationItem key="navigationItem" id="hyy-mM-OXp"/>
+                    <connections>
+                        <outlet property="bookDescription" destination="6Ug-Gk-6gb" id="6G5-M9-icS"/>
+                        <outlet property="bookDetail" destination="XCw-io-3GB" id="R6E-Gd-oeP"/>
+                        <outlet property="bookImage" destination="Ibd-7t-Wbs" id="l7d-57-rfc"/>
+                        <outlet property="bookTitle" destination="t9E-AF-VWU" id="ekq-YN-lZK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W35-6W-zkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1436" y="-814"/>
+            <point key="canvasLocation" x="1504.8" y="-814.54272863568224"/>
         </scene>
         <!--Store-->
         <scene sceneID="yt7-VX-Jwf">
@@ -50,17 +83,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Y0R-A3-OQv">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="EVz-x0-TPK" id="pBo-uG-PY3"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StoreItemCell" textLabel="Loj-C9-G5g" detailTextLabel="l5p-UX-34e" style="IBUITableViewCellStyleSubtitle" id="cvh-fy-GUx">
-                                <rect key="frame" x="0.0" y="72" width="375" height="55.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvh-fy-GUx" id="gaw-3r-QIb">
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="55.5"/>
@@ -83,7 +108,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="o7L-ra-sNf" kind="show" identifier="BookDescriptoinSegue" trigger="accessoryAction" id="ZQJ-nN-BmL"/>
+                                    <segue destination="o7L-ra-sNf" kind="show" identifier="BookDescriptoinSegue" id="r0e-Ui-vTi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,9 +131,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="nQr-dg-fLB">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFilesItemCell" textLabel="JRq-AJ-57D" detailTextLabel="Fjm-wg-EbN" style="IBUITableViewCellStyleSubtitle" id="hXb-zt-Scc">
-                                <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFilesItemCell" textLabel="JRq-AJ-57D" detailTextLabel="Fjm-wg-EbN" style="IBUITableViewCellStyleSubtitle" id="hXb-zt-Scc" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                <rect key="frame" x="0.0" y="72" width="375" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXb-zt-Scc" id="clU-m1-x0m">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -144,6 +174,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="nQr-dg-fLB" id="JRz-lv-DNv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yoj-ZL-YNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,6 +190,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h1y-5k-ZQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.11372549019607843" green="0.60784313725490191" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="FR6-Iy-sab" kind="relationship" relationship="rootViewController" id="Txw-QY-d4g"/>
@@ -198,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2194" y="-182"/>
+            <point key="canvasLocation" x="-2206" y="-101"/>
         </scene>
         <!--Search-->
         <scene sceneID="hFz-TQ-C8N">
@@ -209,6 +249,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ep4-R5-HIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1137254902" green="0.60784313729999995" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -329,7 +370,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Item" id="PVw-8c-TBL"/>
                     <connections>
-                        <outlet property="createButton" destination="uQq-Dh-KUY" id="ptK-mw-DLe"/>
+                        <outlet property="createButton" destination="uQq-Dh-KUY" id="kNn-SY-Dpz"/>
                         <outlet property="imagePickerButton" destination="hiP-ak-2id" id="GHJ-q3-bUG"/>
                         <outlet property="imageView" destination="O3H-NP-KLt" id="fcZ-au-28G"/>
                         <outlet property="newPapersDescription" destination="kSS-f8-LIF" id="RoC-8v-WZw"/>

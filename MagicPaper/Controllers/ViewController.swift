@@ -27,11 +27,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        
-        
-        // Show statistics such as fps and timing information
+        downloadImagesFromRealmToARReferenceImages()
+
+//        Show statistics such as fps and timing information
 //        sceneView.showsStatistics = true
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,24 +64,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if let imageAnchor = anchor as? ARImageAnchor {
             
-            print("Нашел изображение")
-            
             if var videoName = imageAnchor.referenceImage.name{
-                
-                print(videoName)
                 
                 if videoName.starts(with: "user"){
                     
                     let realm = try! Realm()
-
                     
-                    let predicate = NSPredicate(format: "videoPath CONTAINS '\(videoName)'")
+                    let predicate = NSPredicate(format: "videoName CONTAINS '\(videoName)'")
                     let videoObject = realm.objects(Book.self).filter(predicate)
-                    print("Количество найденных объектов в Realm: \(videoObject.count)")
-                    let videoURL = URL(string: videoObject[0].videoPath)!
                     
-                    
-                    print("videoURL: \(videoURL)")
+                    let videoURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(videoObject[0].videoName)
                     
                     videoNode = SKVideoNode(url: videoURL)
                     
@@ -125,6 +116,35 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             videoNode.pause()
             isTouch = false
         }
+    }
+    
+    
+    func downloadImagesFromRealmToARReferenceImages() {
+        let realm = try! Realm()
+        
+        for imageObject in realm.objects(Book.self){
+            
+            let anARWidth = CGFloat(imageObject.imageWidth)
+            
+            let imageURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(imageObject.imageName)
+            
+            if let image = UIImage(contentsOfFile: imageURL.path){
+                if let cgImage = image.cgImage{
+                    let newARImage = ARReferenceImage(cgImage, orientation: .up, physicalWidth: anARWidth)
+                    
+                    var imageObjectName = imageObject.imageName
+                    var components = imageObjectName.components(separatedBy: ".")
+                    if components.count > 1 { // If there is a file extension
+                      components.removeLast()
+                      imageObjectName = components.joined()
+                    }
+                    
+                    newARImage.name = imageObjectName
+                    anARReferenceImages.anARRefImg.insert(newARImage)
+                }
+            }
+        }
+           
     }
     
     

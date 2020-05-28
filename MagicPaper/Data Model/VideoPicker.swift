@@ -90,21 +90,12 @@ extension VideoPicker: UIImagePickerControllerDelegate {
         
         if let videoData = NSData(contentsOf: url){
             
-            print("Успех!")
-            
             let dataPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("addedVideo.mp4")
                 
-                print("DATA PATH: \(dataPath)")
-                
-                let writingCheck = videoData.write(to: dataPath, atomically: false)
-                print(writingCheck)
-                
+            print("DATA PATH: \(dataPath)")
+            
+            videoData.write(to: dataPath, atomically: false)
         }
-        
-        
-        
-        
-        
         
 //        //uncomment this if you want to save the video file to the media library
 //        if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path) {
