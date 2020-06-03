@@ -8,37 +8,48 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+import ChameleonFramework
 
 class StoreTableViewController: UITableViewController, UISearchBarDelegate {
-//
-//    let realm = try! Realm()
-//
-    var storeBookArray = [StoreBook]()
 
-    let itemArray : [String : String] = ["Физика 8 класс" : "Автор: Демидович. Издательство мектеп 2018г.", "Химия 9 класс" : "Автор: Борисенко. Издательство Светоч, 2017г.", "Биология 8 класс" : "Автор: Солнышкин. Издательство мектеп, 2018г."]
+    var storeBookArray = [Book]()
+    let storeBookInfo = StoreBooksInfo()
+    let blueColor = "#1D9BF6"
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 70.0
+        tableView.separatorStyle = .none
          
-        let storeBook1 = StoreBook()
-        storeBook1.bookTitle = "Физика 8 класс"
-        storeBook1.bookDescription = "Автор: Демидович. Издательство мектеп 2018г."
+        let storeBook1 = Book()
+        storeBook1.bookTitle = storeBookInfo.storeBookTitle1
+        storeBook1.bookDescription = storeBookInfo.storeBookDescription1
         storeBookArray.append(storeBook1)
         
-        let storeBook2 = StoreBook()
-        storeBook2.bookTitle = "Химия 9 класс"
-        storeBook2.bookDescription = "Автор: Борисенко. Издательство Светоч, 2017г."
+        let storeBook2 = Book()
+        storeBook2.bookTitle = storeBookInfo.storeBookTitle2
+        storeBook2.bookDescription = storeBookInfo.storeBookDescription2
         storeBookArray.append(storeBook2)
         
-        let storeBook3 = StoreBook()
-        storeBook3.bookTitle = "Биология 8 класс"
-        storeBook3.bookDescription = "Автор: Солнышкин. Издательство мектеп, 2018г."
+        let storeBook3 = Book()
+        storeBook3.bookTitle = storeBookInfo.storeBookTitle3
+        storeBook3.bookDescription = storeBookInfo.storeBookDescription3
         storeBookArray.append(storeBook3)
         
-        
+        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
+        }
+        if let navBarColour = UIColor(hexString: blueColor) {
+            navBar.backgroundColor = navBarColour
+            navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
+        }
+
     }
+
     
-    //MARK - TableView Datasourse methods
+    // MARK: - TableView Datasourse methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storeBookArray.count
@@ -51,8 +62,10 @@ class StoreTableViewController: UITableViewController, UISearchBarDelegate {
         cell.textLabel?.text = storeBookArray[indexPath.row].bookTitle
         cell.detailTextLabel?.text = storeBookArray[indexPath.row].bookDescription
         
-//        cell.textLabel?.text = itemArray.keys.sorted()[indexPath.row]
-//        cell.detailTextLabel?.text = itemArray.values.sorted()[indexPath.row]
+        if let colour = UIColor(hexString: blueColor)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(storeBookArray.count)) {
+            cell.backgroundColor = colour
+            cell.textLabel?.textColor = ContrastColorOf(colour, returnFlat: true)
+        }
 
         return cell
     }
@@ -60,21 +73,14 @@ class StoreTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "BookDescriptoinSegue", sender: self)
-        
     }
     
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinationVC = segue.destination as! BookDescriptionViewController
-//        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! BookDescriptionViewController
         
-//        if segue.identifier == "BookDescriptoinSegue" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                let destinationVC = segue.destination as! BookDescription
-//                destinationVC.name = self.array[(indexPath as NSIndexPath).row]
-//            }
-//        }
-//    }
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.bookNumber = indexPath.row
+        }
+    }
     
 }
