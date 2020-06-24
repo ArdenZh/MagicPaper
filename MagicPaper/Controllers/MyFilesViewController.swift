@@ -27,8 +27,11 @@ class MyFilesViewController: UITableViewController{
            super.viewDidLoad()
         tableView.rowHeight = 70.0
         tableView.separatorStyle = .none
+//        print(realm.configuration.fileURL)
         
         searchBar.delegate = self
+        tableView.allowsSelection = false
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

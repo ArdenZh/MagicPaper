@@ -39,6 +39,36 @@ class StoreTableViewController: UITableViewController, UISearchBarDelegate {
         storeBook3.bookDescription = storeBookInfo.storeBookDescription3
         storeBookArray.append(storeBook3)
         
+        let storeBook4 = Book()
+        storeBook4.bookTitle = storeBookInfo.storeBookTitle4
+        storeBook4.bookDescription = storeBookInfo.storeBookDescription4
+        storeBookArray.append(storeBook4)
+        
+        let storeBook5 = Book()
+        storeBook5.bookTitle = storeBookInfo.storeBookTitle5
+        storeBook5.bookDescription = storeBookInfo.storeBookDescription5
+        storeBookArray.append(storeBook5)
+        
+        let storeBook6 = Book()
+        storeBook6.bookTitle = storeBookInfo.storeBookTitle6
+        storeBook6.bookDescription = storeBookInfo.storeBookDescription6
+        storeBookArray.append(storeBook6)
+        
+        let storeBook7 = Book()
+        storeBook7.bookTitle = storeBookInfo.storeBookTitle7
+        storeBook7.bookDescription = storeBookInfo.storeBookDescription7
+        storeBookArray.append(storeBook7)
+        
+        let storeBook8 = Book()
+        storeBook8.bookTitle = storeBookInfo.storeBookTitle8
+        storeBook8.bookDescription = storeBookInfo.storeBookDescription8
+        storeBookArray.append(storeBook8)
+        
+        let storeBook9 = Book()
+        storeBook9.bookTitle = storeBookInfo.storeBookTitle9
+        storeBook9.bookDescription = storeBookInfo.storeBookDescription9
+        storeBookArray.append(storeBook9)
+        
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
         }
         if let navBarColour = UIColor(hexString: blueColor) {
