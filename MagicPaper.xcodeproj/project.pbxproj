@@ -12,13 +12,12 @@
 		FC4D853E2458431700CA50AF /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */; };
 		FC4EEAC824602D1E00A641DA /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4EEAC724602D1E00A641DA /* Book.swift */; };
 		FC4EEACB246169CA00A641DA /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FC4EEADA24655D8300A641DA /* familia_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FC4EEAD824655D7F00A641DA /* familia_1.mp4 */; };
 		FC68600E247A7BEF00715162 /* ARReferenceImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC68600D247A7BEF00715162 /* ARReferenceImages.swift */; };
 		FC686012247BC41200715162 /* ReferenceImageAndVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC686011247BC41200715162 /* ReferenceImageAndVideo.swift */; };
 		FC686014247BD32800715162 /* MyFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC686013247BD32800715162 /* MyFilesViewController.swift */; };
 		FC96A0BC23FD823100062E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BB23FD823100062E82 /* AppDelegate.swift */; };
 		FC96A0BE23FD823200062E82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0BD23FD823200062E82 /* art.scnassets */; };
-		FC96A0C023FD823200062E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BF23FD823200062E82 /* ViewController.swift */; };
+		FC96A0C023FD823200062E82 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96A0BF23FD823200062E82 /* CameraViewController.swift */; };
 		FC96A0C323FD823200062E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0C123FD823200062E82 /* Main.storyboard */; };
 		FC96A0C523FD823600062E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0C423FD823600062E82 /* Assets.xcassets */; };
 		FC96A0C823FD823600062E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC96A0C623FD823600062E82 /* LaunchScreen.storyboard */; };
@@ -29,6 +28,7 @@
 		FCC2547B246C637B00DD4B83 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC2547A246C637B00DD4B83 /* AddNewItemViewController.swift */; };
 		FCD2A24E245DD1D40069B62E /* familia.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FCD2A24D245DD1D40069B62E /* familia.mp4 */; };
 		FCF182A1247FBF5000DBF969 /* StoreBooksInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF182A0247FBF5000DBF969 /* StoreBooksInfo.swift */; };
+		FCFC0A67249526CE00F677E6 /* familia_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FCFC0A66249526CE00F677E6 /* familia_1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,14 +52,13 @@
 		FC4D85372455E77600CA50AF /* storeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeTableViewController.swift; sourceTree = "<group>"; };
 		FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
 		FC4EEAC724602D1E00A641DA /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		FC4EEAD824655D7F00A641DA /* familia_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = familia_1.mp4; sourceTree = "<group>"; };
 		FC68600D247A7BEF00715162 /* ARReferenceImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ARReferenceImages.swift; path = "MagicPaper/Data Model/ARReferenceImages.swift"; sourceTree = SOURCE_ROOT; };
 		FC686011247BC41200715162 /* ReferenceImageAndVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceImageAndVideo.swift; sourceTree = "<group>"; };
 		FC686013247BD32800715162 /* MyFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyFilesViewController.swift; path = MagicPaper/Controllers/MyFilesViewController.swift; sourceTree = SOURCE_ROOT; };
 		FC96A0B823FD823100062E82 /* MagicPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC96A0BB23FD823100062E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC96A0BD23FD823200062E82 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		FC96A0BF23FD823200062E82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC96A0BF23FD823200062E82 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FC96A0C223FD823200062E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC96A0C423FD823600062E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC96A0C723FD823600062E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		FCC2547A246C637B00DD4B83 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
 		FCD2A24D245DD1D40069B62E /* familia.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = familia.mp4; sourceTree = "<group>"; };
 		FCF182A0247FBF5000DBF969 /* StoreBooksInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBooksInfo.swift; sourceTree = "<group>"; };
+		FCFC0A66249526CE00F677E6 /* familia_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = familia_1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FC4D85372455E77600CA50AF /* storeTableViewController.swift */,
-				FC96A0BF23FD823200062E82 /* ViewController.swift */,
+				FC96A0BF23FD823200062E82 /* CameraViewController.swift */,
 				FC4D853D2458431700CA50AF /* BookDescriptionViewController.swift */,
 				FC686013247BD32800715162 /* MyFilesViewController.swift */,
 				FCC2547A246C637B00DD4B83 /* AddNewItemViewController.swift */,
@@ -136,8 +136,8 @@
 		FC4D853C2455EE0600CA50AF /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				FC4EEAD824655D7F00A641DA /* familia_1.mp4 */,
 				FCD2A24D245DD1D40069B62E /* familia.mp4 */,
+				FCFC0A66249526CE00F677E6 /* familia_1.mp4 */,
 				FC96A0CF23FD902200062E82 /* harrypotter.mp4 */,
 			);
 			path = Videos;
@@ -260,7 +260,7 @@
 				FC96A0BE23FD823200062E82 /* art.scnassets in Resources */,
 				FC96A0C823FD823600062E82 /* LaunchScreen.storyboard in Resources */,
 				FC96A0D023FD902200062E82 /* harrypotter.mp4 in Resources */,
-				FC4EEADA24655D8300A641DA /* familia_1.mp4 in Resources */,
+				FCFC0A67249526CE00F677E6 /* familia_1.mp4 in Resources */,
 				FCD2A24E245DD1D40069B62E /* familia.mp4 in Resources */,
 				FC96A0C523FD823600062E82 /* Assets.xcassets in Resources */,
 				FC96A0C323FD823200062E82 /* Main.storyboard in Resources */,
@@ -325,7 +325,7 @@
 				FC68600E247A7BEF00715162 /* ARReferenceImages.swift in Sources */,
 				FC686014247BD32800715162 /* MyFilesViewController.swift in Sources */,
 				FCC25473246C5E5C00DD4B83 /* ImagePicker.swift in Sources */,
-				FC96A0C023FD823200062E82 /* ViewController.swift in Sources */,
+				FC96A0C023FD823200062E82 /* CameraViewController.swift in Sources */,
 				FCC25477246C5EF800DD4B83 /* VideoView.swift in Sources */,
 				FC4D85382455E77600CA50AF /* storeTableViewController.swift in Sources */,
 				FC96A0BC23FD823100062E82 /* AppDelegate.swift in Sources */,
@@ -481,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ardenzhakhin.MagicPaper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MagicPaper;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -500,7 +500,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ardenzhakhin.MagicPaper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MagicPaper;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

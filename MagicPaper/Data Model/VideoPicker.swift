@@ -47,13 +47,13 @@ open class VideoPicker: NSObject {
 
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        if let action = self.action(for: .camera, title: "Take video") {
+        if let action = self.action(for: .camera, title: "Снять видео") {
             alertController.addAction(action)
         }
-        if let action = self.action(for: .savedPhotosAlbum, title: "Camera roll") {
+        if let action = self.action(for: .savedPhotosAlbum, title: "Фотопленка") {
             alertController.addAction(action)
         }
-        if let action = self.action(for: .photoLibrary, title: "Video library") {
+        if let action = self.action(for: .photoLibrary, title: "Альбомы") {
             alertController.addAction(action)
         }
         

@@ -34,48 +34,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9E-AF-VWU">
-                                <rect key="frame" x="235" y="56" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ibd-7t-Wbs">
-                                <rect key="frame" x="16" y="56" width="150" height="150"/>
+                                <rect key="frame" x="16" y="79" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCw-io-3GB">
-                                <rect key="frame" x="16" y="251" width="81" height="21"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="Описание" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ei7-jF-yUC">
+                                <rect key="frame" x="16" y="250" width="339" height="352"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Подзаголовок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-Gk-6gb">
-                                <rect key="frame" x="217" y="107" width="114" height="21"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Опсание" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZq-qF-fJl">
+                                <rect key="frame" x="174" y="135" width="185" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Название" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p0b-oa-Pd8">
+                                <rect key="frame" x="174" y="68" width="185" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ims-SM-vpc"/>
                     </view>
                     <navigationItem key="navigationItem" id="hyy-mM-OXp"/>
                     <connections>
-                        <outlet property="bookDescription" destination="6Ug-Gk-6gb" id="6G5-M9-icS"/>
-                        <outlet property="bookDetail" destination="XCw-io-3GB" id="R6E-Gd-oeP"/>
+                        <outlet property="bookDescription" destination="PZq-qF-fJl" id="8xx-1n-7Sd"/>
+                        <outlet property="bookDetails" destination="ei7-jF-yUC" id="vr2-Ye-3wD"/>
                         <outlet property="bookImage" destination="Ibd-7t-Wbs" id="l7d-57-rfc"/>
-                        <outlet property="bookTitle" destination="t9E-AF-VWU" id="ekq-YN-lZK"/>
+                        <outlet property="bookTitle" destination="p0b-oa-Pd8" id="9s2-pC-bED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W35-6W-zkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1504.8" y="-814.54272863568224"/>
         </scene>
-        <!--Store-->
+        <!--Обзор-->
         <scene sceneID="yt7-VX-Jwf">
             <objects>
                 <tableViewController id="EVz-x0-TPK" customClass="StoreTableViewController" customModule="MagicPaper" sceneMemberID="viewController">
@@ -117,13 +120,13 @@
                             <outlet property="delegate" destination="EVz-x0-TPK" id="5rI-Lv-Qio"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Store" id="dXU-Kv-3eq"/>
+                    <navigationItem key="navigationItem" title="Обзор" id="dXU-Kv-3eq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAE-Rf-apk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="-813"/>
         </scene>
-        <!--My files-->
+        <!--Мои файлы-->
         <scene sceneID="Rqy-ro-cxZ">
             <objects>
                 <tableViewController id="FR6-Iy-sab" customClass="MyFilesViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,6 +137,7 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" id="nQr-dg-fLB">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
@@ -167,7 +171,7 @@
                             <outlet property="delegate" destination="FR6-Iy-sab" id="YSN-kF-eZ6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My files" id="S5V-cf-7g0">
+                    <navigationItem key="navigationItem" title="Мои файлы" id="S5V-cf-7g0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ejw-Hn-biG">
                             <connections>
                                 <segue destination="PKW-AO-2Gb" kind="show" id="SOB-w7-orV"/>
@@ -182,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="476" y="-101"/>
         </scene>
-        <!--My files-->
+        <!--Мои файлы-->
         <scene sceneID="9Dp-aT-B6e">
             <objects>
                 <navigationController id="ajK-OV-ORd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My files" image="folder" catalog="system" selectedImage="folder" id="POT-LI-W88"/>
+                    <tabBarItem key="tabBarItem" title="Мои файлы" image="folder" catalog="system" selectedImage="folder" id="POT-LI-W88"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h1y-5k-ZQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -206,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="-476" y="-101"/>
         </scene>
-        <!--Camera-->
+        <!--Камера-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="CameraViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,7 +234,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" selectedImage="camera" id="y6T-HK-WZC"/>
+                    <tabBarItem key="tabBarItem" title="Камера" image="camera" catalog="system" selectedImage="camera" id="y6T-HK-WZC"/>
                     <navigationItem key="navigationItem" id="vc3-VB-W7n"/>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
@@ -240,11 +244,11 @@
             </objects>
             <point key="canvasLocation" x="-2206" y="-101"/>
         </scene>
-        <!--Search-->
+        <!--Обзор-->
         <scene sceneID="hFz-TQ-C8N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8H-6U-NOV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="uw0-ba-CnQ"/>
+                    <tabBarItem key="tabBarItem" title="Обзор" image="magnifyingglass" catalog="system" id="uw0-ba-CnQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ep4-R5-HIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -260,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="-476" y="-812"/>
         </scene>
-        <!--Add New Item-->
+        <!--Новый файл-->
         <scene sceneID="v3a-In-grQ">
             <objects>
                 <viewController id="PKW-AO-2Gb" customClass="AddNewItemViewController" customModule="MagicPaper" customModuleProvider="target" sceneMemberID="viewController">
@@ -269,10 +273,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiP-ak-2id">
-                                <rect key="frame" x="5" y="255" width="103" height="24"/>
+                                <rect key="frame" x="5" y="255" width="133" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Pick image">
+                                <state key="normal" title="Выбрать фото">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -283,15 +287,8 @@
                                 <rect key="frame" x="223" y="226" width="136" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите фото" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXn-PG-kYj">
-                                <rect key="frame" x="5" y="226" width="123" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название новой книги:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-g9-PT3">
-                                <rect key="frame" x="93" y="65" width="185" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Добавьте фото:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXn-PG-kYj">
+                                <rect key="frame" x="5" y="226" width="124" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -340,11 +337,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbc-OT-bmK">
-                                <rect key="frame" x="5" y="453" width="103" height="24"/>
+                                <rect key="frame" x="5" y="453" width="133" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Pick video">
+                                <state key="normal" title="Выбрать видео">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -364,11 +361,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-g9-PT3">
+                                <rect key="frame" x="146" y="65" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5tQ-TU-rsK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Item" id="PVw-8c-TBL"/>
+                    <navigationItem key="navigationItem" title="Новый файл" id="PVw-8c-TBL"/>
                     <connections>
                         <outlet property="createButton" destination="uQq-Dh-KUY" id="kNn-SY-Dpz"/>
                         <outlet property="imagePickerButton" destination="hiP-ak-2id" id="GHJ-q3-bUG"/>
